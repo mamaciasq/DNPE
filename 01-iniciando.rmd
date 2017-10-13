@@ -62,6 +62,7 @@ git status
 # Agreguemos todas las modificaciones
 
 git add -A
+
 git status
 
 # Creemos un hito (commit)
