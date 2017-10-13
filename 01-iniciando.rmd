@@ -3,7 +3,9 @@
 # Creando repositorio y haciendo cosas básicas comparadas con RStudio
 
 cd
+
 mkdir my-first-repo
+
 cd my-first-repo
 
 # Comenzar control de versiones en un directorio
@@ -29,7 +31,9 @@ git status
 # Revisemos que entre comillas Git da algunos tips interesantes. Por ejemplo, como dejar de hacer controld e versiones a un archivo. Hagámoslo a ver qué pasa
 
 git rm --cached readme.txt
+
 git status
+
 git add readme.txt
 
 # Creación de un hito (commit)
@@ -44,7 +48,9 @@ git status
 # Agreguemos más archivos
 
 touch file1.txt
+
 touch fil2.txt
+
 ls
 
 # Modifiquemos un archivo
@@ -62,31 +68,21 @@ git commit -m "added two files"
 # Hay un error y debemos devolvernos a corregirlo:
 
 git reset --soft HEAD~
+
 git status
 
 # Estamos exactamente en el punto exacto antes de crear el commit. Hagamos un cambio
 
 mv fil2.txt file2.txt
+
 git status
 
 # Notemos el cambio de los archivos renombrados que el sistema asume como borrados y creemos control de versiones
 
 git add -A
+
 git status
 
 # Hagamos el hito correctamente
 
 git commit -m "added two files"
-
-
-
-
-
-
-
-
-
-
-
-
-
