@@ -1,0 +1,25 @@
+# Ignorar archivos
+
+
+# .gitignore lista nombres de archivos, tipos de archivos o subcarpetas 
+# Cada línea en el .gitignore debe especificar un archivo o un grupo de archivos que no deben ser rastreados por Git
+
+touch toby.jpg
+git status
+
+# Agreguemos una línea al .gitignore donde se especifique que no queremos rastreo a archivos .jpg
+
+echo "*.jpg" > .gitignore
+git status
+
+# Rastreemos y creemos un hito:
+
+git add -A
+git commit -m "added gitignore"
+
+# Si agregamos otra imagen, Git no la verá
+
+touch bernie.jpg
+git status
+ls
+

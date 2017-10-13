@@ -1,0 +1,21 @@
+# GitHub
+
+# Creemos un repositorio en GitHub sin incializar el readme.txt
+
+my-first-repo
+
+# Veamos que repositorios remotos están conectados con el local
+
+git remote
+
+# Vinculémoslo (tiene que estar ubicado dentro del repositorio)
+
+git remote add origin https://github.com/seankross/my-first-repo.git
+
+# Verifiquemos
+
+git remote
+
+# Subamos lo que tenemos en el repositorio local
+
+git push -u origin master

@@ -1,0 +1,27 @@
+# Forking
+
+cd
+pwd
+
+# Fork
+
+git clone https://github.com/[your-github-username]/the-unix-workbench.git
+
+# Vayamos a la carpeta
+
+cd the-unix-workbench
+
+# Miremos el remote
+
+git remote -v
+
+# Hagamos un cambio
+
+echo "- Sean Kross" >> guestbook.md # Add your own name of course!
+cat guestbook.md
+
+# Agreguemos, creemos un hito y subamos los cambios
+
+git add guestbook.md
+git commit -m "added my name to guestbook.md"
+git push

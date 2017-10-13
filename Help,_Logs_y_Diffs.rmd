@@ -1,0 +1,38 @@
+# Help, Logs y Diffs
+
+# Ayuda
+
+git help status
+
+# Comandos usados 
+
+git log
+
+# Git muestra las diferencias entre archivos sin rastreo comparados con el último commit. Agreguemos una línea de texto al readme.txt
+
+echo "The third line." >> readme.txt
+git diff readme.txt
+
+# Los signos menos muestran lo que se eliminó y los signos más muestran lo que se agregó. Abramos y borremos la segunda línea
+
+nano readme.txt
+
+# Delete the second line
+
+git diff readme.txt
+git status
+
+# Tenemos dos opciones: o le hacemos rastreo con git add para subir los cambios o usamos git checkout con el fin de remover todos los cambios que hemos hecho para restaurar su contenido a lo que había en el último commit. Removamos nuestros cambios para ver qué pasa
+
+cat readme.txt
+
+## Welcome to My First Repo
+## I added a line.
+
+git checkout readme.txt
+cat readme.txt
+
+## Welcome to My First Repo
+## Learning Git is going well so far.
+
+# Como puede verse, los cambios que hicimos a readme.txt han sido deshechos

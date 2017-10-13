@@ -1,0 +1,163 @@
+# Branching (Parte 1)
+
+# Hablar sobre el branching
+
+# Mostremos los branches existentes
+
+git branch
+
+# La estrella indica en dónde estamos ubicados. El branch por defecto se llama _master_
+
+# Creemos un nuevo branch para hacer cambios
+
+git branch my-new-feature
+
+# Verifiquemos que haya quedado bien
+
+git branch
+
+# Cmabiemos de branch
+
+git checkout my-new-feature
+
+git branch
+
+git status
+
+# Devolvámonos a _master_
+
+git checkout master
+
+# Verifiquemos
+
+git branch
+
+# Para borrar el branch
+
+git branch -d my-new-feature
+git branch
+
+# Creemos un nuevo branch para adicionar un sección al readme.txt. Puede crearse y cambiarse a ese nuevo branch al tiempo:
+
+git checkout -b update-readme
+
+# Modifiquemos
+
+echo "I added this line in the update-readme branch." >> readme.txt
+cat readme.txt
+
+## Welcome to My First Repo
+## Learning Git is going well so far.
+## I added this line in the update-readme branch.
+
+# Agreguemos y creemos un hito
+
+git add -A
+git commit -m "added a third line to readme.txt"
+
+
+# Cambiémonos a master y revisemos el archivo
+
+git checkout master
+
+cat readme.txt
+
+# Cambiémonos de nuevo a update y revisemos el archivo
+
+git checkout update-readme
+cat readme.txt
+
+
+# Hagamos un cambio, agreguémoslo y creemos un hito
+
+echo "It's sunny outside today." >> readme.txt
+git add -A
+git commit -m "added weather info"
+
+
+### Segunda parte
+
+# Cambiémonos de nuevo a master
+
+git checkout master
+
+# Concatenemos y revisemos el archivo
+
+git merge update-readme
+
+cat readme.txt
+
+# Creemos una falla
+
+git checkout update-readme
+nano readme.txt
+cat readme.txt
+
+## Welcome to My First Repo
+## Learning Git is going well so far.
+## I added this line in the update-readme branch.
+## It's cloudy outside today.
+
+# Notemos que cambiamos "sunny" por "cloudy". Agreguemos y creemos un hito.
+
+git add -A
+git commit -m "changed sunny to cloudy"
+
+# Cambiémonos a master
+
+git checkout master
+
+# Cambiemos la misma línea de código usando nano
+
+nano readme.txt
+cat readme.txt
+
+## Welcome to My First Repo
+## Learning Git is going well so far.
+## I added this line in the update-readme branch.
+## It's windy outside today.
+
+# Creemos un hito con estos cambios
+
+git add -A
+git commit -m "changed sunny to windy"
+
+# Concatenemos y veamos el conflicto
+
+git merge update-readme
+git status
+
+# Revisemos lo que pasa
+
+cat readme.txt
+
+## Welcome to My First Repo
+## Learning Git is going well so far.
+## I added this line in the update-readme branch.
+## <<<<<<< HEAD
+## It's windy outside today.
+## =======
+## It's cloudy outside today.
+## >>>>>>> update-readme
+
+
+Las primeras tres líneas de este archivo se ven normales, luego, ¡las cosas se ponen interesantes! La línea entre <<<<<<< HEAD y ======= muestra la versión de la línea en conflicto en el branch actual. En la terminología de Git, el HEAD representa el commit más reciente en el branch que está actualmente ubicado (que es el master en este caso). La línea entre ======= y >>>>>>> update-readme muestra la versión de la línea en el branch de update-readme. Para resolver este conflicto, todo lo que tenemos que hacer es abrir el archivo readme.txt con nano para que podamos eliminar las líneas de las que queremos deshacernos. En este caso, mantengamos la versión "cloudy".
+
+nano readme.txt
+cat readme.txt
+
+## Welcome to My First Repo
+## Learning Git is going well so far.
+## I added this line in the update-readme branch.
+## It's cloudy outside today.
+
+
+# Ahora puede crearse un hito con este conflicto resuelto
+
+git add -A
+git commit -m "resolved conflict"
+
+
+
+
+
