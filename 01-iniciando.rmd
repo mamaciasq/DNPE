@@ -28,7 +28,7 @@ git add readme.txt
 
 git status
 
-# Revisemos que entre comillas Git da algunos tips interesantes. Por ejemplo, como dejar de hacer controld e versiones a un archivo. Hagámoslo a ver qué pasa
+# Revisemos que entre comillas Git da algunos tips interesantes. Por ejemplo, como dejar de hacer control de versiones a un archivo. Hagámoslo a ver qué pasa
 
 git rm --cached readme.txt
 
@@ -60,6 +60,9 @@ echo "Learning Git is going well so far." >> readme.txt
 git status
 
 # Agreguemos todas las modificaciones
+
+git add -A
+git status
 
 # Creemos un hito (commit)
 
