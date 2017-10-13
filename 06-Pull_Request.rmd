@@ -17,7 +17,9 @@ git merge master
 # Hagamos cambios
 
 rm *.txt
+
 rm *.jpg
+
 ls
 
 # Abramos readme.txt con nano, borremos todo y peguemos esto:
@@ -52,6 +54,7 @@ The best way to get in touch with me is [on Twitter](https://twitter.com/seankro
 # Creemos un hito
 
 git add -A
+
 git commit -m "made readme more personal"
 
 # Subámoslo
